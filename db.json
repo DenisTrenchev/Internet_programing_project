@@ -1,36 +1,60 @@
 {
-	"users": [
-		{
-			"user_id": 1,
-			"username": "Denis",
-			"password": "password",
-		},
-		{
-			"user_id": 2,
-			"username": "Pesho",
-			"password": "password",
-		}
-	],
-	"posts": [
-		{
-			"user_id": 1,
-			"post_id": 1,
-			"post_content":"asd",
-		},
-		{
-			"user_id": 1,
-			"post_id": 2,
-			"post_content":"asd",
-		},
-		{
-			"user_id": 2,
-			"post_id": 1,
-			"post_content":"asd",
-		},
-		{
-			"user_id": 2,
-			"post_id": 2,
-			"post_content":"asd",
-		}
-	]
+  "users": [
+    {
+      "id": 1,
+      "username": "Denis",
+      "password": "password"
+    },
+    {
+      "username": "Momchil",
+      "password": "asdwqe123",
+      "id": 2
+    },
+    {
+      "username": "Sashko",
+      "password": "Pedal",
+      "id": 3
+    },
+    {
+      "username": "Balaclava",
+      "password": 123,
+      "id": 4
+    },
+    {
+      "username": "Vendetta",
+      "password": "g",
+      "id": 5
+    },
+    {
+      "username": "asd",
+      "password": 123,
+      "id": 6
+    }
+  ],
+  "posts": [
+    {
+      "post_content": "Test data",
+      "id": 5
+    },
+    {
+      "post_content": "Не бе рат, с танка",
+      "user_id": 7,
+      "id": 7
+    },
+    {
+      "user_id": 5,
+      "post_content": "asd",
+      "id": 8
+    },
+    {
+      "user_id": 6,
+      "post_content": "asd",
+      "id": 9
+    },
+    {
+      "user_id": 6,
+      "post_content": "dsa",
+      "id": 10
+    }
+  ]
 }
