@@ -12,7 +12,9 @@ $(document).ready(function(){
 			method: "GET",
 			dataType: "JSON",
 		}).then(function(responce){
-			$("#dajmicontent").text(responce[0].post_content);
+			console.log(responce[0].post_content);
+			$("#dajmicontent").html("");
+			$("#dajmicontent").val(responce[0].post_content);
 			$("#dajmiposta").show("slow");
 		});
 	}
@@ -36,10 +38,12 @@ $(document).ready(function(){
 			var name = $("#username-login").val();
 			var pass = $("#password-login").val();
 			if (name == ""){
+				alert("Missing username or password!");
 				return false;
 			}
 
 			if (pass == ""){
+				alert("Missing username or password!");
 				return false;
 			}
 
@@ -47,11 +51,10 @@ $(document).ready(function(){
 	}
 
 	function doMagic(responce){
+		$("#login-register").hide();
 		$("#username2").text(responce[0].username);
 		userId = responce[0].id;
-		$("#login-register");
 		$("#ifImIn").show("slow");
-		$("#ifImIn").css("display","inline-block");
 		visualisePosts();
 	}
 
@@ -81,7 +84,10 @@ $(document).ready(function(){
 		
 		function visualisePost(post){
 			var item = $("<li />");
-			item.text(post.post_content);
+			if (!typeof(post.post_content === parseInt(post.post_content, 10))){
+				post.post_content = post.post_content.replace(/(\n)+/g, "<br />");
+			}
+			item.html(post.post_content);
 			item.attr("data-id", post.id);
 
 			$("#postove").append(item);
@@ -143,10 +149,9 @@ $(document).ready(function(){
 			contentType: "application/json; charset=utf-8",
 			data: JSON.stringify(data),
 		}).then(function(){
-			$("#dajmiposta").hide("slow");
 			visualisePost2(id)
-			$("#dajmiposta").show("slow");
 			visualisePosts();
+			$("#dajmiposta").hide();
 		});
 	}
 
@@ -190,6 +195,7 @@ $(document).ready(function(){
 	function attachHandlers(){
 		$(document).on("click", "[data-id]", function(){
 			var id = $(this).attr("data-id");
+			console.log(id);
 			$("#dajmiposta").hide("slow");
 			$("#dajmiposta").attr("data-id-2", id);
 			visualisePost2(id);
@@ -212,13 +218,14 @@ $(document).ready(function(){
 		});
 
 		$("#editPostButton").on("click", function(){			
-			var data = prompt("Моля въведете новия текст:", "Test data");
-			var id= $(this).parent().attr("data-id-2");
-			editPost(data, id);
+			var value = $('#dajmicontent').val();
+			//var data = prompt("Please enter new text:", "Test data");
+			var id= $("#dajmiposta").attr("data-id-2");
+			editPost(value, id);
 		});
 	
 		$("#deletePostButton").on("click", function(){
-			var id= $(this).parent().attr("data-id-2");
+			var id= $("#dajmiposta").attr("data-id-2");
 			deletePost(id);
 		})
 	}
