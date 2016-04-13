@@ -1,32 +1,50 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
-		<div id="login-register">
-			<input id = "username" />
-			<input id = "password" />
-			<button id="register">Register</button>
-
-			<input id = "username-login" />
-			<input id = "password-login" />
-			<button id="logIn">Login</button>
-		</div>
-		<div style="display: none; width: 30%;" id="ifImIn">
-			<h1 id="username2"></h1>
-			<div id="makeNewPost">
-				<textarea rows="8" cols="40" id="makePost"></textarea>
-				<br><button id="makePostButton">Make post</button>
+		<div id="nav">
+			<div id="nav_wrapper">
+				<ul>
+					<li> <a href="">Register</a>
+					<ul>
+              		<li><div id="login-register">
+							<input id = "username" />
+							<input id = "password" />
+							<button id="register">Register</button>
+						</div>
+					</li>
+					</ul>
+					<li> <a href="">Login</a>
+					<ul>
+              		<li><div id="login-register">
+	              			<input id = "username-login" />
+							<input id = "password-login" />
+							<button id="logIn">Login</button>
+						</div>
+					</li>
+					</ul>
+				</ul>
 			</div>
 		</div>
-		<div style="display: none; width: 65%;" id = "visualisePosts">
-			<ul id="postove">
-			</ul>
-		</div>
-		<div id="dajmiposta" style="display:none">
-				<textarea  rows="8" cols="40" id="dajmicontent"></textarea>
-				<br><button id="editPostButton">Edit</button>
-					<button id="deletePostButton">Delete</button>
+		<div id = "contentbg">
+			<div style="display: none; width: 30%;" id="ifImIn">
+				<h1 id="username2"></h1>
+				<div id="makeNewPost">
+					<textarea rows="8" cols="40" id="makePost"></textarea>
+					<br><button id="makePostButton">Make post</button>
+				</div>
+			</div>
+			<div style="display: none; width: 65%;" id = "visualisePosts">
+				<ul id="postove">
+				</ul>
+			</div>
+			<div id="dajmiposta" style="display:none">
+					<textarea  rows="8" cols="40" id="dajmicontent"></textarea>
+					<br><button id="editPostButton">Edit</button>
+						<button id="deletePostButton">Delete</button>
+			</div>
 		</div>
 	</body>
 </html>
