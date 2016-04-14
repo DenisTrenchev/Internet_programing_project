@@ -58,3 +58,29 @@ body {
     background-image: url("content.jpg");
     padding:15px;
 }
+#username{
+    width:200px;
+    height:40px;
+}
+#username-login{
+    width:200px;
+    height:40px;
+}
+#password{
+    width:200px;
+    height:40px;
+}
+#password-login{
+    width:200px;
+    height:40px;
+}
+#register{
+    width:100px;
+    height:40px; 
+    border-radius: 75px;
+}
+#logIn{
+    width:100px;
+    height:40px;
+    border-radius: 75px; 
+}
